@@ -3,6 +3,7 @@ import AppInfo from "../app-info/app-info";
 import SearchPanel from "../search-panel/search-panel";
 import AppFilter from "../app-filter/app-filter";
 import EmployeesList from "../emploes-list/employes-list";
+import EmployesAddForm from "../employes-add-form/employes-add-form";
 
 function App() {
     return (
@@ -15,6 +16,8 @@ function App() {
             </div>
 
             <EmployeesList/>
+
+            <EmployesAddForm/>
         </div>
     );
 }
