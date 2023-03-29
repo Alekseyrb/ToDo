@@ -2,11 +2,6 @@ import './employees-list-item.css';
 import {Component} from "react";
 
 class EmployeesListItem extends Component{
-
-    // let classNames = 'list-group-item d-flex justify-content-between';
-    // if (increase) {
-    //     classNames += ' increase';
-    // }
     constructor(props) {
         super(props);
         this.state = {
@@ -31,7 +26,11 @@ class EmployeesListItem extends Component{
     }
 
     render() {
-        const {name, salary} = this.props;
+        // let classNames = 'list-group-item d-flex justify-content-between';
+        // if (increase) {
+        //     classNames += ' increase';
+        // }
+        const {name, salary, onDelete} = this.props;
         const {increase, rise} = this.state;
         return (
             <li className={`list-group-item d-flex justify-content-between ${rise ? 'like' : ''} ${increase ? 'increase' : ''}`}>
@@ -43,7 +42,10 @@ class EmployeesListItem extends Component{
                         <i className='fas fa-cookie'></i>
                     </button>
 
-                    <button type="button" className='btn-cookie btn-sm'>
+                    <button
+                        onClick={onDelete}
+                        type="button"
+                        className='btn-cookie btn-sm'>
                         <i className='fas fa-trash'></i>
                     </button>
 
