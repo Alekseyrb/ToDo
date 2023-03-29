@@ -4,10 +4,11 @@ import './emloyees-list.css';
 const EmployeesList = ({data}) => {
 
     const elements = data.map(elem => {
-       return (
-           // <EmployeesListItem name={elem.name} salary={elem.salary}/>
-           <EmployeesListItem {...elem}/>
-       );
+        const {id, ...elemProps} = elem;
+        return (
+            // <EmployeesListItem name={elem.name} salary={elem.salary}/>
+            <EmployeesListItem key={id} {...elemProps}/>
+        );
     });
 
     return (
